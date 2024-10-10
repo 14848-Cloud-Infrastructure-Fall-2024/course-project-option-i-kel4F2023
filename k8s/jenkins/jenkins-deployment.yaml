@@ -15,7 +15,7 @@ spec:
         app: jenkins
     spec:
       containers:
-        - image: kel4/14848-project-jenkins:0.0.3
+        - image: kel4/14848-project-jenkins-x86:0.0.3
           imagePullPolicy: Always
           name: jenkins
           ports:
