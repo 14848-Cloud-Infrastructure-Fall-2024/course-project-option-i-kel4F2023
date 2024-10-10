@@ -1,2 +1,15 @@
 .idea
 target
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# GCP credentials
+gcp-credentials.json
+
+# IDEs
+.vscode/
+.idea/

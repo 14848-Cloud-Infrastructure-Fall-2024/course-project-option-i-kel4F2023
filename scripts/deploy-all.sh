@@ -23,6 +23,8 @@ gcloud container clusters get-credentials hadoop-cluster --region us-west1-a
 echo "Deploying Jenkins and SonarQube..."
 kubectl apply -f k8s/jenkins/jenkins-deployment.yaml
 kubectl apply -f k8s/sonarqube/sonarqube-deployment.yaml
+kubectl apply -f k8s/jenkins/jenkins-service.yaml
+kubectl apply -f k8s/sonarqube/sonarqube-service.yaml
 
 # Set up Jenkins and SonarQube intercommunication
 # echo "Setting up Jenkins and SonarQube intercommunication..."
