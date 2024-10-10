@@ -25,8 +25,8 @@ kubectl apply -f k8s/jenkins/jenkins-deployment.yaml
 kubectl apply -f k8s/sonarqube/sonarqube-deployment.yaml
 
 # Set up Jenkins and SonarQube intercommunication
-echo "Setting up Jenkins and SonarQube intercommunication..."
-./scripts/setup-jenkins-sonarqube.sh
+# echo "Setting up Jenkins and SonarQube intercommunication..."
+# ./scripts/setup-jenkins-sonarqube.sh
 
 # Deploy Hadoop
 echo "Deploying Hadoop..."
