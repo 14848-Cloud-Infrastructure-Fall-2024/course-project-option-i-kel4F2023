@@ -27,6 +27,13 @@ pipeline {
             }
             steps {
                 script {
+                    // Install kubectl
+                    sh '''
+                        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+                        chmod +x kubectl
+                        sudo mv kubectl /usr/local/bin/
+                    '''
+
                     sh '''
                         kubectl cp src/hadoop-job hadoop-master-pod:/tmp/
                         kubectl exec hadoop-master-pod -- /bin/bash -c "hadoop jar /opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar \
