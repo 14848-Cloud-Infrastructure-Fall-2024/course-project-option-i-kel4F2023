@@ -1,0 +1,16 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# GCP credentials
+gcp-credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+
+# IDEs
+.vscode/
+.idea/

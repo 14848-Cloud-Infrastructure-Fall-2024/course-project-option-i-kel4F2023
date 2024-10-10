@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hadoop-worker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hadoop-worker
+  template:
+    metadata:
+      labels:
+        app: hadoop-worker
+    spec:
+      containers:
+        - name: hadoop-worker
+          image: apache/hadoop:3
+          command: ["/bin/bash", "-c"]
+          args:
+            - start-dfs.sh && start-yarn.sh && tail -f /dev/null
