@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('SCM Checkout') {
+            steps{
+           git branch: 'main', url: 'https://github.com/14848-Cloud-Infrastructure-Fall-2024/course-project-option-i-kel4F2023.git'
+            }
+        }
+        // run sonarqube test
+        stage('Run Sonarqube') {
+            environment {
+                scannerHome = tool 'sonar-scanner-default';
+            }
+            steps {
+              withSonarQubeEnv('sq-server') {
+                sh "${scannerHome}/bin/sonar-scanner"
+              }
+            }
+        }
+    }
+}

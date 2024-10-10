@@ -1,0 +1,9 @@
+tool:
+  sonarRunnerInstallation:
+    installations:
+      - name: "sonar-scanner-default"
+        properties:
+          - installSource:
+              installers:
+                - sonarRunnerInstaller:
+                    id: "6.2.1.4610"
